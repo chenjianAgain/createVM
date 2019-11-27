@@ -27,7 +27,9 @@ export class CreateVmStack extends cdk.Stack {
     const linux = new ec2.GenericLinuxImage({
     'us-west-1': 'ami-087c2c50437d0b80d',
     'us-west-3': 'ami-087c2c50437d0b80d',
-    'us-west-2': 'ami-087c2c50437d0b80d',
+    'us-west-2': 'ami-087c2c50437d0b80d', // RHEL 8
+//     'us-west-2': 'ami-06d51e91cea0dac8d', // ubuntu 18.04
+
     // ...
 });
     

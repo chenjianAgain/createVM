@@ -10,9 +10,9 @@ new CreateVmStack(app, 'CreateVmStack', {
     }
 });
 
-new CreateVmStack(app, 'CreateVmStack-1', {
+new CreateVmStack(app, 'CreateVmStack-2', {
     env: {
-        region: 'us-east-1',
+        region: 'us-west-2',
         account: '374801192098'
     }
 });

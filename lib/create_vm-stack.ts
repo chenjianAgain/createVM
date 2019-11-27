@@ -23,12 +23,17 @@ export class CreateVmStack extends cdk.Stack {
 
     // We are using the latest AMAZON LINUX AMI
     const awsAMI = new ec2.AmazonLinuxImage({generation: ec2.AmazonLinuxGeneration.AMAZON_LINUX_2});
-    // const linuxAMI = new ec2.GenericLinuxImage()
+//     const linuxAMI = new ec2.GenericLinuxImage()
+    const linux = new ec2.GenericLinuxImage({
+    'us-east-1': 'ami-97785bed',
+    'us-west-2': 'ami-087c2c50437d0b80d',
+    // ...
+});
     
     const masterAsg = new autoscaling.AutoScalingGroup(this, 'masterAsg', {
       vpc,
       instanceType: ec2.InstanceType.of(ec2.InstanceClass.T2, ec2.InstanceSize.MICRO),
-      machineImage: awsAMI,
+      machineImage: linux,
       vpcSubnets: { subnetType: ec2.SubnetType.PUBLIC },
       associatePublicIpAddress: true,
       allowAllOutbound: true,

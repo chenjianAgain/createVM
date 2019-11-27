@@ -32,7 +32,7 @@ export class CreateVmStack extends cdk.Stack {
       vpcSubnets: { subnetType: ec2.SubnetType.PUBLIC },
       associatePublicIpAddress: true,
       allowAllOutbound: true,
-      keyName: 'devops'
+      keyName: 'key'
     }).addSecurityGroup(mySecurityGroup);
   }
 }

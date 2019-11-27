@@ -25,6 +25,8 @@ export class CreateVmStack extends cdk.Stack {
     const awsAMI = new ec2.AmazonLinuxImage({generation: ec2.AmazonLinuxGeneration.AMAZON_LINUX_2});
 //     const linuxAMI = new ec2.GenericLinuxImage()
     const linux = new ec2.GenericLinuxImage({
+    'us-west-1': 'ami-087c2c50437d0b80d',
+    'us-west-3': 'ami-087c2c50437d0b80d',
     'us-west-2': 'ami-087c2c50437d0b80d',
     // ...
 });

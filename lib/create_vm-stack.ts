@@ -35,7 +35,7 @@ export class CreateVmStack extends cdk.Stack {
     
     const masterAsg = new autoscaling.AutoScalingGroup(this, 'masterAsg', {
       vpc,
-      instanceType: ec2.InstanceType.of(ec2.InstanceClass.T2, ec2.InstanceSize.MICRO),
+      instanceType: ec2.InstanceType.of(ec2.InstanceClass.T2, ec2.InstanceSize.XLARGE),
       machineImage: linux,
       vpcSubnets: { subnetType: ec2.SubnetType.PUBLIC },
       associatePublicIpAddress: true,
